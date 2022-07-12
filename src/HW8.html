@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+//task8-1
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div class = "Zoom">
+    LOGIN : <input type="text" id = "login">
+    PASSWORD : <input type="text" id = "password">
+    <button onclick="signIn()">SIGN IN</button>
+</div>
+</body>
+<script type="text/javascript">
+    function signIn() {
+
+        login = document.getElementById('login');
+        password = document.getElementById('password');
+
+        if(login.value==="ilyas" && password.value==="qweqwe"){
+
+            document.getElementById('loginForm').innerHTML = "<h1>YOU ARE AUTHENTICATED!</h1>";
+
+        }else{
+
+            login.style = "border: red solid 1px";
+            password.style = "border: red solid 1px";
+
+        }
+
+    }
+</script>
+</html>
+
+//task8-2
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<button onclick="toOperate(-1)"> - </button>
+<span id = "number">231</span>
+<button onclick="toOperate(1)"> + </button>
+</body>
+<script type="text/javascript">
+    function toOperate(optType) {
+
+        num = document.getElementById('number');
+
+        if(optType==-1){
+            currentNum = parseInt(num.innerHTML);
+            currentNum--;
+            num.innerHTML = currentNum;
+        }else if(optType==1){
+            currentNum = parseInt(num.innerHTML);
+            currentNum++;
+            num.innerHTML = currentNum;
+        }
+    }
+</script>
+</html>
+
+//task8-3
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<button onclick="toOperate(-1)"> - </button>
+<span id = "number">231</span>
+<button onclick="toOperate(1)"> + </button>
+</body>
+<script type="text/javascript">
+    function toOperate(optType) {
+
+        num = document.getElementById('number');
+
+        if(optType==-1){
+            currentNum = parseInt(num.innerHTML);
+            currentNum--;
+            num.innerHTML = currentNum;
+        }else if(optType==1){
+            currentNum = parseInt(num.innerHTML);
+            currentNum++;
+            num.innerHTML = currentNum;
+        }
+    }
+</script>
+</html>
+
+//task8-4
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<img src="1.jpeg" id = "pic">
+<button onclick="prevPic()"><<<</button>
+<button onclick="nextPic()">>>></button>
+</body>
+<script type="text/javascript">
+    var pics = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg"];
+    var index = 0;
+    function nextPic() {
+        kart = document.getElementById('pic');
+        if(index<pics.length-1){
+            index++;
+        }else{
+            index = 0;
+        }
+        kart.src = pics[index];
+    }
+    function prevPic() {
+        kart = document.getElementById('pic');
+        if(index>0){
+            index--;
+        }else{
+            index = pics.length-1;
+        }
+        kart.src = pics[index];
+    }
+</script>
+</html>
+
+//task8-5
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<img src="1.jpeg" id = "mainPic">
+<br>
+<img src="1.jpeg" width="77" onmouseover="setPic(this)">
+<img src="2.jpeg" width="77" onmouseover="setPic(this)">
+<img src="3.jpeg" width="77" onmouseover="setPic(this)">
+<img src="4.jpeg" width="77" onmouseover="setPic(this)">
+<img src="5.jpeg" width="77" onmouseover="setPic(this)">
+</body>
+<script type="text/javascript">
+    function setPic(argPic){
+        document.getElementById("mainPic").src = argPic.src;
+    }
+</script>
+</html>
+
+
+//task8-6
+
+<!DOCTYPE html>
+<html>
+<body>
+Email:
+<br>
+<input type="text" size="40" id="input_email">
+<p id="email_p"></p>
+Password:<br>
+<input type="password" size="40" id="input_password">
+<p id="password_p"></p>
+Retype Password:<br>
+<input type="password" size="40" id="input_repassword"><br>
+<input type="button" value="Register" onclick="regForm()">
+<p id="repassword_p">
+</body>
+<script>
+    function regForm() {
+        tempemail = "ilyas@gmail.com";
+
+        if (document.getElementById("email_p").value === tempemail) {
+            document.getElementById("email_p").innerHTML = "Current email is already use";
+            document.getElementById("email_p").style = "color: red";
+        } else {
+            document.getElementById("email_p").innerHTML = "";
+            document.getElementById("email_p").style = "";
+        }
+        if (document.getElementById("input_password").value.length < 6) {
+            document.getElementById("password_p").innerHTML = "Password length at least must be 6 symbols";
+            document.getElementById("password_p").style = "color: red";
+        } else {
+            document.getElementById("password_p").innerHTML = "";
+            document.getElementById("password_p").style = "";
+        }
+        if (document.getElementById("input_password").value !== document.getElementById("input_repassword").value) {
+            document.getElementById("repassword_p").innerHTML = "Password are not same";
+            document.getElementById("repassword_p").style = "color: red";
+        } else {
+            document.getElementById("repassword_p").innerHTML = "";
+            document.getElementById("repassword_p").style = "";
+        }
+
+
+        document.getElementById("input_email").value;
+        document.getElementById("input_password").value;
+        document.getElementById("input_repassword").value;
+    }
+
+</script>
+</html>
