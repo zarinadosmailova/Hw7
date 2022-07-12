@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+// task 7-1
+var x = parseInt(prompt("Insert your count:"))
+
+let arr = new Array();
+for (let i = 0; i < x; i++) {
+arr[i] = parseInt(prompt("Insert your number"))
+}
+
+var m = parseInt(prompt("Insert the next number:"))
+
+for (let i = 0; i < arr.length; i++) {
+if (m == arr[i]){
+alert(i)
+break;
+}
+}
+
+// task 7-2
+let sum = 0;
+let cnt = 0;
+let avg = 1;
+let arr = new Array();
+let index = 0;
+while(true){
+let x = parseInt(prompt("Insert your number:"))
+arr.push(x)
+if(x == 0)
+break;
+}
+
+for (let i = 0; i < arr.length; i++) {
+sum += arr[i]
+cnt++
+avg = sum / cnt
+}
+alert(avg)
+
+// task 7-3
+let arr = new Array();
+let index = 0;
+while(true){
+let x = parseInt(prompt("Insert your number:"))
+arr.push(x)
+if(x == 0)
+break;
+}
+
+for (let i = 0; i < arr.length; i++) {
+if (arr[i] > 0)
+alert(arr[i])
+}
+
+    // task 7-4
+    var x = parseInt(prompt("Insert the count:"))
+    let all = 1
+
+    let arr = new Array();
+    for (let i = 0; i < x; i++) {
+        arr[i] = parseInt(prompt("Insert your number"))
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] != 0)
+            all *= arr[i]
+    }
+    alert(all)
+
+    // task 7-5
+    cars = [
+        {"name":"Toyota", "price": 12000000, "year": 2015, "volume": 2.2},
+        {"name":"Mercedes", "price": 70000000, "year": 2018, "volume": 3.8},
+        {"name":"Toyota", "price": 7000000, "year": 2013, "volume": 2.0},
+        {"name":"BMW", "price": 11000000, "year": 2011, "volume": 3.0},
+        {"name":"Lexus", "price": 60000000, "year": 2017 ,"volume": 5.7}
+    ];
+
+    var choice = parseInt(prompt("INSERT [1] TO SEARCH BY NAME\n" +
+        "INSERT [2] TO SEARCH BY YEAR\n" +
+        "INSERT [3] TO SEARCH BY ENGINE VOLUME\n" +
+        "INSERT [4] TO SEARCH BY PRICE\n" +
+        "INSERT [5] TO EXIT"))
+
+    if (choice == 1){
+        name = prompt("INSERT NAME OF CAR:")
+        for (let i = 0; i < cars.length; i++) {
+            if (name === cars[i]["name"])
+                alert(cars[i]["name"] + "-" + cars[i]["year"] + "-" + cars[i]["volume"] + " liters" + "-" + cars[i]["price"] + "KZT")
+        }
+    }else if (choice == 2){
+        year_from = parseInt(prompt("INSERT YEAR START FROM:"))
+        year_to = parseInt(prompt("INSERT YEAR ENDS FROM: "))
+        for (let i = 0; i < cars.length; i++) {
+            if (year_from < cars[i]["year"] && year_to > cars[i]["year"])
+                alert(cars[i]["name"] + "-" + cars[i]["year"] + "-" + cars[i]["volume"] + " liters" + "-" + cars[i]["price"] + "KZT")
+        }
+    }else if (choice == 3){
+        vol_from = parseFloat(prompt("INSERT ENGINE VOLUME START FROM:"))
+        vol_to = parseFloat(prompt("INSERT ENGINE VOLUME ENDS FROM:"))
+        for (let i = 0; i < cars.length; i++) {
+            if (vol_from < cars[i]["volume"] && vol_to > cars[i]["volume"])
+                alert(cars[i]["name"] + "-" + cars[i]["year"] + "-" + cars[i]["volume"] + " liters" + "-" + cars[i]["price"] + "KZT")
+        }
+    }else if (choice == 4){
+        price_from = parseInt(prompt("INSERT PRICE START FROM:"))
+        price_to = parseInt(prompt("INSERT PRICE ENDS FROM:"))
+        for (let i = 0; i < cars.length; i++) {
+            if (price_from < cars[i]["price"] && price_to > cars[i]["price"])
+                alert(cars[i]["name"] + "-" + cars[i]["year"] + "-" + cars[i]["volume"] + " liters" + "-" + cars[i]["price"] + "KZT")
+        }
+    }else{
+        alert("Bye!")
+    }
+</body>
+</html>
